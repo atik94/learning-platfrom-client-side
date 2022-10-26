@@ -15,7 +15,7 @@ const LeftSide = () => {
       <div>
         {courses.map((course) => (
           <p key={course.id}>
-            <Link to="courses">{course.title}</Link>
+            <Link to="/courses">{course.title}</Link>
           </p>
         ))}
       </div>
