@@ -14,7 +14,7 @@ const Courses = () => {
             <Card.Title className="text-center">{data.title}</Card.Title>
             <Card.Text>{data.description}</Card.Text>
             <h2>Price {data.price} TK</h2>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Get premium access</Button>
           </Card.Body>
         </Card>
       ))}
