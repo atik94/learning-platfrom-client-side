@@ -30,7 +30,16 @@ const Header = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand>
+            <Link to="/">Edu Lab</Link>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2936/2936719.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
@@ -39,7 +48,16 @@ const Header = () => {
                   Courses
                 </Link>
               </Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <Nav.Link>
+                <Link Link to="/blog">
+                  Blog
+                </Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link Link to="/faq">
+                  FAQ
+                </Link>
+              </Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href="#deets"></Nav.Link>
