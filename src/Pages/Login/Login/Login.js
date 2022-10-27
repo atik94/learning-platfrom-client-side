@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 const Login = () => {
   const [error, setError] = useState("");
@@ -43,6 +43,9 @@ const Login = () => {
       <Button variant="primary" type="submit">
         Login
       </Button>
+      <p>
+        <small>New to this site ?</small> Please <Link to="/register">Register Here</Link>
+      </p>
       <Form.Text className="text-danger">{error}</Form.Text>
     </Form>
   );
