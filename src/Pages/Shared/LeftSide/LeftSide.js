@@ -11,7 +11,6 @@ const LeftSide = () => {
   }, []);
   return (
     <div>
-      <h2>this is left side {courses.length}</h2>
       <div>
         {courses.map((course) => (
           <p key={course.id}>

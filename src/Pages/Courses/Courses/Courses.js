@@ -20,12 +20,11 @@ const Courses = () => {
             <Card.Title className="text-center">{data.title}</Card.Title>
             <Card.Text>{data.description}</Card.Text>
             <div className="d-flex justify-content-between">
-              <h2>Price {data.price} TK</h2>
+              <h2>Price : {data.price} TK</h2>
               <Button onClick={handlePrint} variant="danger">
                 Download
               </Button>
             </div>
-            <h2>{data.id}</h2>
             <Link to={`/checkOut/${data.id}`}>
               <Button variant="primary">Get premium access</Button>
             </Link>
