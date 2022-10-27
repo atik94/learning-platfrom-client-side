@@ -1,10 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 const Courses = () => {
   const courseData = useLoaderData();
-  console.log(courseData);
+  //console.log(courseData);
   return (
     <div>
       {courseData.map((data) => (
@@ -14,7 +14,10 @@ const Courses = () => {
             <Card.Title className="text-center">{data.title}</Card.Title>
             <Card.Text>{data.description}</Card.Text>
             <h2>Price {data.price} TK</h2>
-            <Button variant="primary">Get premium access</Button>
+            <h2>{data.id}</h2>
+            <Link to={`/checkOut/${data.id}`}>
+              <Button variant="primary">Get premium access</Button>
+            </Link>
           </Card.Body>
         </Card>
       ))}
