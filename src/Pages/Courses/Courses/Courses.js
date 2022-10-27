@@ -1,19 +1,30 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
 const Courses = () => {
   const courseData = useLoaderData();
   //console.log(courseData);
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
   return (
-    <div>
+    <div ref={componentRef}>
       {courseData.map((data) => (
         <Card>
           <Card.Img variant="top" src={data.image} style={{ height: "30rem" }} />
           <Card.Body>
             <Card.Title className="text-center">{data.title}</Card.Title>
             <Card.Text>{data.description}</Card.Text>
-            <h2>Price {data.price} TK</h2>
+            <div className="d-flex justify-content-between">
+              <h2>Price {data.price} TK</h2>
+              <Button onClick={handlePrint} variant="danger">
+                Download
+              </Button>
+            </div>
             <h2>{data.id}</h2>
             <Link to={`/checkOut/${data.id}`}>
               <Button variant="primary">Get premium access</Button>
